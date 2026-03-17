@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA Login & Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>My SPA App</h1>
+        </header>
+        <!-- Root container for views -->
+        <main id="app"></main>
+    </div>
+ 
+    <!-- Hidden templates for views -->
+    <template id="login-template">
+        <div class="login-view">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit">Login</button>
+                <p class="error-message" id="login-error"></p>
+            </form>
+        </div>
+    </template>
+ 
+    <template id="home-template">
+        <div class="home-view">
+            <h2>Welcome, <span id="username"></span>!</h2>
+            <p>Your recent activity:</p>
+            <ul id="activity-list"></ul>
+            <button id="logout-btn">Logout</button>
+            <p class="loading-message" id="home-loading">Loading...</p>
+            <p class="error-message" id="home-error"></p>
+        </div>
+    </template>
+ 
+    <script src="api-mock.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+ 
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+ 
+header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+ 
+/* Hide templates by default */
+template {
+    display: none;
+}
+ 
+/* Views */
+.login-view, .home-view {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+ 
+h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+ 
+/* Forms */
+.form-group {
+    margin-bottom: 1rem;
+}
+ 
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+ 
+input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+ 
+button {
+    width: 100%;
+    padding: 0.8rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+ 
+button:hover {
+    background: #0056b3;
+}
+ 
+/* Error/Loading Messages */
+.error-message {
+    color: #dc3545;
+    margin-top: 1rem;
+    display: none;
+}
+ 
+.loading-message {
+    color: #666;
+    text-align: center;
+    margin: 1rem 0;
+}
+ 
+/* Homepage */
+#activity-list {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+ 
+#logout-btn {
+    background: #dc3545;
+}
+ 
+#logout-btn:hover {
+    background: #c82333;
+}
