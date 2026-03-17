@@ -1,51 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPA Login & Homepage</title>
+    <title>Biodanza Player 3.0</title>
+    <base href="/~hotsechu/SPA_BPW3/">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="app-container">
-        <header>
-            <h1>My SPA App</h1>
-        </header>
+
+<body class="d-flex flex-column min-vh-100">
+    <div class="flex-grow-1">
         <!-- Root container for views -->
-        <main id="app"></main>
+        <main id="app" class="py-4"></main>
     </div>
- 
+
+    <!-- Footer -->
+    <footer class="bg-light py-3 mt-4 border-top">
+        <div class="container text-center">
+            <a href="#" id="about-link" class="text-decoration-none">Acerca de Biodanza Player 3.0 © 2026 Todos los
+                derechos reservados.</a>
+        </div>
+    </footer>
+
     <!-- Hidden templates for views -->
     <template id="login-template">
         <div class="login-view">
-            <h2>Login</h2>
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
+            <div class="container">
+                <div class="row justify-content-center mb-4">
+                    <div class="col-md-6 text-center">
+                        <img src="./images/bioplayer.png" alt="Biodanza Player" class="img-fluid">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" required>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card shadow-lg">
+                            <div class="card-body p-4">
+                                <h2 class="card-title text-center mb-4">Login</h2>
+                                <form id="login-form">
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Contraseña</label>
+                                        <input type="password" class="form-control" id="password" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+                                    <p class="error-message alert alert-danger mt-3" id="login-error"></p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <button type="submit">Login</button>
-                <p class="error-message" id="login-error"></p>
-            </form>
+            </div>
         </div>
     </template>
- 
+
     <template id="home-template">
         <div class="home-view">
-            <h2>Welcome, <span id="username"></span>!</h2>
-            <p>Your recent activity:</p>
-            <ul id="activity-list"></ul>
-            <button id="logout-btn">Logout</button>
-            <p class="loading-message" id="home-loading">Loading...</p>
-            <p class="error-message" id="home-error"></p>
+            <div class="container">
+                <div class="row justify-content-center mb-4">
+                    <div class="col-md-8 text-center">
+                        <img src="images/bioplayer_234x100.png" alt="Biodanza Player" class="img-fluid">
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <h2 class="mb-4">Bienvenido, <span id="username"></span>!</h2>
+                        <h5 class="mb-3">Tu actividad reciente:</h5>
+                        <p class="loading-message alert alert-info" id="home-loading">Cargando...</p>
+                        <div id="activity-container" style="display: none;">
+                            <ul id="activity-list" class="list-group mb-4"></ul>
+                            <p class="error-message alert alert-danger" id="home-error"></p>
+                        </div>
+                        <button id="logout-btn" class="btn btn-danger w-100">Cerrar Sesión</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </template>
- 
-    <script src="api-mock.js"></script>
-    <script src="app.js"></script>
+
+    <template id="about-template">
+        <div class="about-view">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card shadow-lg">
+                            <div class="card-body p-4">
+                                <h2 class="card-title text-center mb-4">Acerca de Biodanza Player 3.0</h2>
+                                <p class="card-text">
+                                    <strong>Biodanza Player 3.0</strong> es una aplicación web moderna diseñada para
+                                    facilitar
+                                    la experiencia de los usuarios en la plataforma de Biodanza. Esta aplicación
+                                    proporciona
+                                    una interfaz intuitiva y responsiva que funciona en cualquier dispositivo.
+                                </p>
+                                <p class="card-text">
+                                    <strong>Características principales:</strong>
+                                </p>
+                                <ul>
+                                    <li>Autenticación segura de usuarios</li>
+                                    <li>Interfaz responsive con Bootstrap</li>
+                                    <li>Navegación fluida sin recargas de página (SPA)</li>
+                                    <li>Gestión de sesiones persistentes</li>
+                                    <li>Diseño moderno y accesible</li>
+                                </ul>
+                                <p class="card-text">
+                                    <strong>Versión:</strong> 3.0<br>
+                                    <strong>Año:</strong> 2026<br>
+                                    <strong>Desarrollo:</strong> Biodanza Team
+                                </p>
+                                <hr>
+                                <p class="text-muted small">
+                                    © 2026 Biodanza Player. Todos los derechos reservados.
+                                </p>
+                                <a href="#" id="about-back" class="btn btn-primary w-100 mt-3">Volver a Inicio</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- App Module -->
+    <script type="module" src="app.js"></script>
 </body>
+
 </html>

@@ -1,97 +1,201 @@
-/* styles.css */
+/* styles.css - Custom Bootstrap Styles */
+
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --danger-color: #dc3545;
+    --success-color: #198754;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
- 
-.app-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
+
+html,
+body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
- 
-header {
-    margin-bottom: 2rem;
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+}
+
+/* Main container */
+#app {
+    flex: 1;
+}
+
+/* Views */
+.login-view,
+.home-view,
+.about-view {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-view {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem 0;
+}
+
+.login-view .card {
+    border: none;
+    border-radius: 12px;
+}
+
+.home-view,
+.about-view {
+    padding: 2rem 0;
+}
+
+/* Images */
+.login-view img,
+.home-view img {
+    max-height: 250px;
+    object-fit: contain;
+}
+
+/* Forms */
+.form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Buttons */
+.btn {
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0b5ed7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(13, 110, 253, 0.3);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+    border-color: #bb2d3b;
+}
+
+/* Messages */
+.error-message {
+    display: none;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.loading-message {
     text-align: center;
+    display: none;
+    border-radius: 6px;
 }
- 
+
+.loading-message.show {
+    display: block;
+}
+
+/* Activity List */
+#activity-list {
+    list-style: none;
+}
+
+#activity-list li {
+    padding: 0.75rem 1rem;
+    background: #f8f9fa;
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    background-color: #f8f9fa !important;
+}
+
+footer a {
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #0b5ed7;
+    text-decoration: underline !important;
+}
+
+/* About View */
+.about-view .card {
+    border: none;
+    border-radius: 12px;
+}
+
+.about-view ul {
+    margin-left: 1.5rem;
+    line-height: 1.8;
+}
+
+.about-view ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    .login-view,
+    .home-view,
+    .about-view {
+        padding: 1rem 0;
+    }
+
+    .card {
+        margin: 0 1rem;
+    }
+
+    .login-view img,
+    .home-view img {
+        max-height: 200px;
+    }
+}
+
 /* Hide templates by default */
 template {
     display: none;
-}
- 
-/* Views */
-.login-view, .home-view {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 2rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
- 
-h2 {
-    margin-bottom: 1.5rem;
-    color: #333;
-}
- 
-/* Forms */
-.form-group {
-    margin-bottom: 1rem;
-}
- 
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #666;
-}
- 
-input {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
- 
-button {
-    width: 100%;
-    padding: 0.8rem;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 1rem;
-}
- 
-button:hover {
-    background: #0056b3;
-}
- 
-/* Error/Loading Messages */
-.error-message {
-    color: #dc3545;
-    margin-top: 1rem;
-    display: none;
-}
- 
-.loading-message {
-    color: #666;
-    text-align: center;
-    margin: 1rem 0;
-}
- 
-/* Homepage */
-#activity-list {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-}
- 
-#logout-btn {
-    background: #dc3545;
-}
- 
-#logout-btn:hover {
-    background: #c82333;
 }
