@@ -1,0 +1,29 @@
+{
+    "files.associations": {
+        "*.js": "javascript"
+    },
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "javascript.preferences.quoteStyle": "single",
+    "javascript.suggest.autoImports": true,
+    "files.exclude": {
+        "node_modules": true,
+        ".git": true,
+        ".DS_Store": true,
+        "*.log": true
+    },
+    "search.exclude": {
+        "node_modules": true,
+        "dist": true,
+        "build": true
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "liveServer.settings.port": 5500,
+    "liveServer.settings.CustomBrowser": "chrome",
+    "[javascript]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    }
+}

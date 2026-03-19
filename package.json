@@ -1,0 +1,30 @@
+{
+  "name": "biodanza-player-3.0",
+  "version": "3.0.0",
+  "description": "Aplicación Biodanza Player con backend Node.js y frontend SPA",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "install-server": "npm install",
+    "build": "npm run install-server"
+  },
+  "keywords": ["biodanza", "spa", "node.js", "express"],
+  "author": "jgarribas",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "dotenv": "^16.3.1",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "express-rate-limit": "^7.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
